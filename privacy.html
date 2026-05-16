@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-content">
             <a href="." class="logo">
-                <img src="dolphin.png" alt="" class="nav-logo" width="36" height="36">
+                <img src="cadie-app-logo.png" alt="" class="nav-logo" width="36" height="36">
                 <span class="logo-text">Cadie</span>
             </a>
             <div class="nav-links">
@@ -49,31 +49,15 @@
                 <ul>
                     <li>Subscription status (free or premium)</li>
                     <li>Listening and reading progress (content positions, completion status, and bookmarks)</li>
-                    <li>Speaking practice usage (daily and monthly session counts and duration in seconds)</li>
                     <li>Translation feature usage (monthly token counts and request counts)</li>
-                    <li>Document upload usage, daily limit status, source file names, generated titles, summaries, and audio processing status</li>
                     <li>Content reviews you submit (rating, comment text, and associated content)</li>
                 </ul>
 
                 <p><strong>Subscription Information</strong></p>
                 <p>Subscriptions are processed entirely through Apple's App Store and managed by RevenueCat. We receive only your subscription status (plan tier and expiration date). We <strong>never</strong> have access to your payment method, credit card details, or Apple ID.</p>
 
-                <p><strong>Audio Data (Speaking Practice)</strong></p>
-                <p>When using the speaking practice feature, your voice audio is streamed in real-time through a WebSocket connection to our server for speech-to-text conversion. The audio is:</p>
-                <ul>
-                    <li>Processed in real-time by speech recognition services</li>
-                    <li>Converted to text for AI conversation purposes</li>
-                    <li><strong>Not recorded, not stored, and not saved</strong> on any server</li>
-                    <li>Discarded immediately after processing</li>
-                </ul>
-                <p>The text transcription of your speech is used only within the active session to generate AI responses and is not permanently stored.</p>
-
-                <p><strong>Uploaded Documents</strong></p>
-                <p>When you upload a PDF or TXT file, the App extracts readable text and sends that text to our backend and AI processing services to generate an English summary and audio version. We store the generated title, summary, audio segments, source file name, processing status, and your anonymous device ID so the document can appear in your library.</p>
-                <p>The original file itself is not stored as a downloadable document. Generated summaries and audio can be deleted from the App.</p>
-
                 <p><strong>Content You Generate</strong></p>
-                <p>If you submit reviews or ratings for public content, the review text, rating, and your anonymous device ID are stored to display reviews to other users. Uploaded documents are private to your account and do not support public reviews.</p>
+                <p>If you submit reviews or ratings for public content, the review text, rating, and your anonymous device ID are stored to display reviews to other users.</p>
 
                 <h2>Information We Do NOT Collect</h2>
                 <ul>
@@ -89,9 +73,9 @@
                 <p>We use the collected information solely to:</p>
                 <ul>
                     <li>Provide and maintain the App's core functionality</li>
-                    <li>Sync your listening, reading, and speaking progress</li>
+                    <li>Sync your listening and reading progress</li>
                     <li>Enforce usage limits based on your subscription plan</li>
-                    <li>Generate AI-powered content, document summaries, audio, translations, and speaking responses</li>
+                    <li>Generate AI-powered translations</li>
                     <li>Display community reviews and ratings</li>
                     <li>Detect and prevent abuse of the service</li>
                 </ul>
@@ -101,11 +85,9 @@
                 <ul>
                     <li><strong>Supabase</strong> — Backend database and authentication infrastructure (<a href="https://supabase.com/privacy" target="_blank">Privacy Policy</a>)</li>
                     <li><strong>RevenueCat</strong> — Subscription management and receipt validation (<a href="https://www.revenuecat.com/privacy" target="_blank">Privacy Policy</a>)</li>
-                    <li><strong>Deepgram</strong> — Speech-to-text processing for speaking practice (<a href="https://deepgram.com/privacy" target="_blank">Privacy Policy</a>)</li>
-                    <li><strong>Inworld AI</strong> — AI language model and voice processing for speaking responses, document summaries, and generated audio (<a href="https://inworld.ai/privacy-policy" target="_blank">Privacy Policy</a>)</li>
                     <li><strong>Apple App Store</strong> — Payment processing and app distribution</li>
                 </ul>
-                <p>Text content (not audio) may be sent to AI model providers for content generation. No personal identifiers are included in these requests.</p>
+                <p>Text content may be sent to AI model providers for translation and content generation. No personal identifiers are included in these requests.</p>
 
                 <h2>Data Storage and Security</h2>
                 <p>Your data is stored on Supabase's infrastructure with the following security measures:</p>
@@ -114,16 +96,13 @@
                     <li>Row-level security policies ensure users can only access their own data</li>
                     <li>Device IDs are validated against strict format requirements</li>
                     <li>API endpoints require authentication tokens</li>
-                    <li>WebSocket connections for speaking practice use HMAC signature verification</li>
                 </ul>
 
                 <h2>Data Retention and Deletion</h2>
                 <p>We retain your data for as long as your account is active. You can delete your account directly from the App (Settings → Privacy & Data). When you delete your account:</p>
                 <ul>
                     <li>All listening and reading progress and bookmarks are permanently deleted</li>
-                    <li>All speaking usage records are permanently deleted</li>
                     <li>All translation usage records are permanently deleted</li>
-                    <li>Uploaded document records, generated summaries, and generated audio are deleted</li>
                     <li>All content reviews and reports are permanently deleted</li>
                     <li>Your device ID record is permanently deleted and subscription reset to free</li>
                 </ul>
@@ -134,10 +113,9 @@
                 <h2>Your Rights</h2>
                 <p>You have the right to:</p>
                 <ul>
-                    <li><strong>Delete uploaded documents</strong> — Remove individual uploaded documents and their generated summaries/audio from the App</li>
                     <li><strong>Delete your data</strong> — Use the in-app account deletion feature at any time</li>
                     <li><strong>Access your data</strong> — Contact us to request a copy of data associated with your device ID</li>
-                    <li><strong>Opt out</strong> — You may stop using features that process data (such as speaking practice) at any time</li>
+                    <li><strong>Opt out</strong> — You may stop using any feature that processes data at any time</li>
                 </ul>
                 <p>To exercise any of these rights, contact us at <a href="mailto:aykutssert@gmail.com">aykutssert@gmail.com</a>.</p>
 
@@ -157,7 +135,7 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <img src="dolphin.png" alt="" class="footer-logo" width="28" height="28">
+                <img src="cadie-app-logo.png" alt="" class="footer-logo" width="28" height="28">
                 <span class="footer-name">Cadie</span>
             </div>
             <div class="footer-links">
